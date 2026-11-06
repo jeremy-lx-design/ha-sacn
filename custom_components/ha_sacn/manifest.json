@@ -1,0 +1,10 @@
+{
+  "domain": "ha_sacn",
+  "name": "sACN",
+  "codeowners": ["@jeremy-lx-design"],
+  "config_flow": true,
+  "documentation": "https://github.com/jeremy-lx-design/ha-sacn",
+  "iot_class": "local_push",
+  "requirements": [],
+  "version": "0.1.0"
+}

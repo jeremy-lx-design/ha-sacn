@@ -1,0 +1,75 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "sACN receiver",
+        "description": "Choose the IPv4 address of the network interface used for multicast. 0.0.0.0 uses the system default. Add patches after setup.",
+        "data": {
+          "interface": "Multicast interface IPv4 address",
+          "interval_ms": "Minimum interval between calls per entity (ms)"
+        }
+      }
+    },
+    "error": {
+      "invalid_interface": "Enter a valid IPv4 interface address."
+    },
+    "abort": {
+      "already_configured": "An sACN receiver is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "sACN patching",
+        "menu_options": {
+          "add": "Add patch",
+          "edit": "Edit patch",
+          "remove": "Remove patch",
+          "settings": "Receiver settings"
+        }
+      },
+      "settings": {
+        "title": "Receiver settings",
+        "description": "Changes reload the receiver. The interval is per entity, from 100 to 10000 milliseconds.",
+        "data": {
+          "interface": "Multicast interface IPv4 address",
+          "interval_ms": "Minimum interval between calls per entity (ms)"
+        }
+      },
+      "add": {
+        "title": "Add patch",
+        "description": "Select a light or switch. Profiles: dimmer (1 channel), rgb (3: R, G, B), dimmer_rgb (4: dimmer, R, G, B), switch (1 channel). Addresses start at 1.",
+        "data": {
+          "entity_id": "Entity",
+          "universe": "Universe",
+          "address": "Starting address",
+          "profile": "Profile"
+        }
+      },
+      "edit": {
+        "title": "Select patch to edit",
+        "data": { "entity_id": "Entity" }
+      },
+      "edit_patch": {
+        "title": "Edit patch",
+        "description": "Profiles: dimmer (1 channel), rgb (3: R, G, B), dimmer_rgb (4: dimmer, R, G, B), switch (1 channel).",
+        "data": {
+          "entity_id": "Entity",
+          "universe": "Universe",
+          "address": "Starting address",
+          "profile": "Profile"
+        }
+      },
+      "remove": {
+        "title": "Remove patch",
+        "data": { "entity_id": "Entity" }
+      }
+    },
+    "error": {
+      "invalid_interface": "Enter a valid IPv4 interface address.",
+      "invalid_patch": "The profile must match the entity domain and its channels must fit within the universe.",
+      "unknown_entity": "This entity does not exist.",
+      "duplicate_entity": "This entity already has a patch. Edit it instead."
+    }
+  }
+}
